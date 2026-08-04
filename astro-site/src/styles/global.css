@@ -1,0 +1,96 @@
+/* ===================================================
+   KRYSTALLSYKEHJELPEN – globale designtokens
+   Fargepaletten er bevisst beholdt fra den blå/turkise
+   identiteten (matcher den ekte logoen: marineblå ring,
+   turkis sirkel).
+=================================================== */
+
+:root {
+  --navy: #163875;
+  --navy-2: #1e4c96;
+  --sky: #eff4fb;
+  --paper: #ffffff;
+  --beige: #f4eee3;
+  --ink: #1b2431;
+  --ink-soft: #55616f;
+  --line: #e2e8f2;
+  --accent: #2f79c9;
+  --turquoise: #5fc1d6;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --max-width: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--sky);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--navy);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: clamp(2.1rem, 5vw, 3.1rem); font-weight: 600; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+
+p { margin: 0 0 1em; color: var(--ink-soft); }
+a { color: var(--navy); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heading-rule {
+  width: 48px;
+  height: 3px;
+  background: var(--accent);
+  border: none;
+  margin: 10px 0 22px;
+  border-radius: 2px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.94rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn-primary { background: var(--navy-2); color: #fff; }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(30,76,150,0.3); }
+
+.btn-outline { background: #fff; border: 1.5px solid var(--line); color: var(--navy); }
+.btn-outline:hover { border-color: var(--navy-2); }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn-primary:hover { transform: none; }
+}

@@ -1,0 +1,66 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Krystallsykehjelpen</h4>
+        <p class="muted">Klinikk-, hjemme- og telefonkonsultasjoner for krystallsyke og svimmelhet i Fetsund.</p>
+      </div>
+      <div>
+        <h4>Snarveier</h4>
+        <a href="/om-oss/">Om krystallsykehjelpen</a>
+        <a href="/krystallsyken/">Krystallsyken</a>
+        <a href="/ovelsesbibliotek/">Øvelsesbibliotek</a>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <a href="tel:+4746384492">+47 46384492</a>
+        <a href="mailto:mariekiropraktor@gmail.com">mariekiropraktor@gmail.com</a>
+        <a href="/kontakt/">Garderbakken 1, Fetsund</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© {year} Krystallsykehjelpen</div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--navy);
+    color: #cbd8ef;
+    padding: 48px 0 28px;
+    margin-top: 20px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .site-footer h4 {
+    color: #fff;
+    font-family: var(--font-display);
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+  .site-footer a {
+    color: #cbd8ef;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.92rem;
+  }
+  .site-footer a:hover { color: #fff; }
+  .muted { color: #cbd8ef; font-size: 0.92rem; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    padding-top: 20px;
+    font-size: 0.82rem;
+    color: #9db0d1;
+  }
+  @media (max-width: 720px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+</style>

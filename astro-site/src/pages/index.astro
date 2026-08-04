@@ -1,0 +1,385 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const bookingUrl =
+  "https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=54907264-049e-11eb-8fc8-26c6f94d64b7";
+
+const faq = [
+  {
+    q: "Hvordan vet jeg om jeg har krystallsyke?",
+    a: "Det vanligste tegnet er korte, kraftige svimmelhetsanfall som utløses av bestemte hodebevegelser. En undersøkelse hos oss avklarer om det faktisk er krystallsyke eller noe annet.",
+  },
+  {
+    q: "Hvor lenge varer et anfall?",
+    a: "Selve svimmelheten varer som regel kun sekunder til et par minutter per anfall, men den kan komme tilbake flere ganger i løpet av dagen.",
+  },
+  {
+    q: "Kan krystallsyke gå over av seg selv?",
+    a: "Hos noen forsvinner symptomene av seg selv, men det kan ta uker, og plagene kan komme tilbake. De fleste blir merkbart bedre etter én eller noen få behandlinger.",
+  },
+  {
+    q: "Tilbyr dere hjemmebesøk?",
+    a: "Ja, vi kommer gjerne hjem til deg dersom svimmelheten gjør det vanskelig å ta seg til klinikken.",
+  },
+];
+
+const steps = [
+  { n: 1, title: "Undersøkelse", desc: "Vi kartlegger symptomene dine og hvilke bevegelser som utløser svimmelheten." },
+  { n: 2, title: "Diagnose", desc: "Gjennom tester finner vi ut hvilken buegang som er påvirket." },
+  { n: 3, title: "Behandling", desc: "Vi utfører et behandlingsmanøver som flytter krystallene tilbake dit de hører hjemme." },
+  { n: 4, title: "Hjemmeøvelser", desc: "Enkle øvelser hjemme kan hjelpe på restsymptomer og forebygge nye episoder." },
+  { n: 5, title: "Bedring", desc: "De fleste blir betydelig bedre etter én til to behandlinger." },
+];
+---
+
+<Layout
+  title="Krystallsykehjelpen | Behandling av krystallsyke i Fetsund"
+  description="Sliter du med svimmelhet eller krystallsyke (BPPV)? Vi tilbyr klinikk-, hjemme- og telefonkonsultasjoner i Fetsund. Bestill time i dag."
+  activePath="/"
+>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Ekspertise innen krystallsyke og svimmelhet</span>
+        <h1>Svimmel når du snur deg i sengen?</h1>
+        <p class="lead">
+          Krystallsyke (BPPV) er en av de vanligste årsakene til svimmelhet. Få grundig undersøkelse
+          og målrettet behandling – i klinikken, hjemme hos deg, eller over telefon.
+        </p>
+        <div class="btn-row">
+          <a href={bookingUrl} class="btn btn-primary">Bestill time →</a>
+          <a href="tel:+4746384492" class="btn btn-outline">Telefonkonsultasjon</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="photo-block">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 4a5 5 0 015 5c0 3-2 4-2 7a3 3 0 01-6 0" />
+              <path d="M9 15a4 4 0 01-4-4 4 4 0 014-4" />
+            </svg>
+            <br /><span>BYTT MED EKTE BILDE</span>
+          </div>
+        </div>
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" /><path d="M9 12l2 2 4-4" />
+          </svg>
+          Trygg og effektiv behandling med spesialkompetanse på svimmelhet
+        </div>
+      </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,32 C360,72 1080,0 1440,32 L1440,60 L0,60 Z" fill="#ffffff" />
+    </svg>
+  </section>
+
+  <section class="section-alt no-top">
+    <div class="container">
+      <div class="stat-strip">
+        <div class="stat-item">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg></div>
+          <div><h4>Ikke farlig</h4><p>Krystallsyke er ufarlig, men kan være svært plagsomt.</p></div>
+        </div>
+        <div class="stat-item">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" /></svg></div>
+          <div><h4>Vanlig</h4><p>Den vanligste årsaken til stillingsutløst svimmelhet.</p></div>
+        </div>
+        <div class="stat-item">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 6.5L21 11l-6.5 2.5L12 20l-2.5-6.5L3 11l6.5-2.5z" /></svg></div>
+          <div><h4>Løse krystaller</h4><p>Små krystaller løsner i balanseorganet og forstyrrer signalene.</p></div>
+        </div>
+        <div class="stat-item">
+          <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4" /><line x1="12" y1="2" x2="12" y2="5" /><line x1="12" y1="19" x2="12" y2="22" /></svg></div>
+          <div><h4>Kan behandles</h4><p>Som regel effektiv behandling hos kiropraktor med rett kompetanse.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="diagram-grid">
+        <div>
+          <span class="eyebrow">Om krystallsyke</span>
+          <h2>Hva skjer i øret?</h2>
+          <hr class="heading-rule" />
+          <p>I det indre øret har vi tre bueganger som registrerer bevegelse. I buegangene finnes det små krystaller (otolitter) som normalt sitter fast i et eget område.</p>
+          <p>Når krystallene løsner og havner i en buegang, kan de gi signaler om bevegelse selv når du er i ro. Det er dette som skaper svimmelheten når du endrer stilling.</p>
+          <a href="/krystallsyken/" class="card-link">Les mer om hvordan balanseorganet fungerer →</a>
+        </div>
+        <div class="diagram-illustration">
+          <svg viewBox="0 0 400 300" width="100%" role="img" aria-label="Illustrasjon av det indre øret og buegangene">
+            <circle cx="150" cy="150" r="95" fill="#fff" stroke="#d7e3f2" stroke-width="1" />
+            <g fill="none" stroke="#1b3b8c" stroke-width="6" stroke-linecap="round">
+              <path d="M120 90 a45 45 0 1 1 -30 70" />
+              <path d="M150 80 a55 30 25 1 1 -15 85" />
+              <path d="M100 130 a35 55 -20 1 1 60 60" />
+            </g>
+            <circle cx="118" cy="150" r="7" fill="#5fc1d6" />
+            <circle cx="90" cy="160" r="4" fill="#2fbf9c" />
+            <circle cx="95" cy="172" r="3.5" fill="#2fbf9c" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Slik kan vi hjelpe deg med krystallsyke</h2>
+        <hr class="heading-rule" />
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-body">
+            <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg></div>
+            <h3>Grundig undersøkelse</h3>
+            <p>Vi finner ut nøyaktig hvilken buegang som er påvirket, før vi starter behandling.</p>
+            <a href="/krystallsyken/" class="card-link">Les mer →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" /></svg></div>
+            <h3>Presis behandling</h3>
+            <p>Behandlingen tilpasses hvilken type krystallsyke du har.</p>
+            <a href="/krystallsyken/" class="card-link">Les mer →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2" /><path d="M9 22l2-9-3-2 1-5 3 2 2-1 3 3-2 2 1 5-3 5" /></svg></div>
+            <h3>Øvelser hjemme</h3>
+            <p>Trygge egenøvelser og oppfølging etter behandling.</p>
+            <a href="/ovelsesbibliotek/" class="card-link">Se øvelser →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg></div>
+            <h3>Ikke krystallsyke?</h3>
+            <p>Hvis det viser seg å være noe annet, hjelper vi deg videre.</p>
+            <a href="/kontakt/" class="card-link">Ta kontakt →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <h2>Slik foregår behandlingen</h2>
+        <hr class="heading-rule" />
+      </div>
+      <div class="step-row">
+        {steps.map((step, i) => (
+          <>
+            <div class="step">
+              <div class="step-icon">
+                <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9" /></svg></div>
+                <div class="step-num">{step.n}</div>
+              </div>
+              <div class="step-text">
+                <h4>{step.title}</h4>
+                <p>{step.desc}</p>
+              </div>
+            </div>
+            {i < steps.length - 1 && (
+              <div class="step-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
+              </div>
+            )}
+          </>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container faq-grid">
+      <div>
+        <div class="section-head">
+          <h2>Vanlige spørsmål</h2>
+          <hr class="heading-rule" />
+        </div>
+        {faq.map((item) => (
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              {item.q}
+              <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+            </button>
+            <div class="accordion-panel"><p>{item.a}</p></div>
+          </div>
+        ))}
+        <p class="mt"><a href="/krystallsyken/" class="card-link">Se alle spørsmål og svar →</a></p>
+      </div>
+
+      <div class="callout">
+        <div class="icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg></div>
+        <div>
+          <h3>Viktig å vite</h3>
+          <p>Krystallsyke gir ikke svimmelhet når du går eller sitter i ro. Ved vedvarende svimmelhet bør andre årsaker vurderes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="bio-card">
+        <div class="bio-photo">MH</div>
+        <div>
+          <h3>Marie – spesialisert på svimmelhet</h3>
+          <p>Kiropraktor med spesialkompetanse på utredning og behandling av svimmelhet og krystallsyke.</p>
+          <a href="/om-oss/" class="card-link">Les mer om Krystallsykehjelpen →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-beige">
+    <div class="container cta-band">
+      <div>
+        <h2>Klar til å bli kvitt svimmelheten?</h2>
+        <p>Bestill en time i dag – vi hjelper deg tilbake til en stødig hverdag.</p>
+      </div>
+      <a href={bookingUrl} class="btn btn-primary">Bestill time →</a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll(".accordion-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.closest(".accordion-item")?.classList.toggle("open");
+    });
+  });
+</script>
+
+<style>
+  .hero { padding: 56px 0 90px; position: relative; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  .eyebrow { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 10px; display: inline-block; }
+  .lead { font-size: 1.1rem; max-width: 46ch; }
+  .hero-wave { position: absolute; bottom: -2px; left: 0; width: 100%; line-height: 0; }
+  .btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+  @media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; } }
+
+  .hero-media { position: relative; }
+  .photo-block {
+    aspect-ratio: 4/3; border-radius: var(--radius);
+    background: linear-gradient(135deg, #d7e6fa, #f4eee3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy); text-align: center; padding: 20px;
+    border: 1px dashed #b9cbe6;
+  }
+  .photo-block span { font-size: 0.82rem; font-weight: 600; color: var(--navy-2); }
+  .photo-block svg { width: 56px; height: 56px; margin-bottom: 10px; }
+
+  .hero-badge {
+    position: absolute; bottom: -22px; left: -14px; background: #fff;
+    border-radius: 12px; box-shadow: 0 10px 28px rgba(22,56,117,0.16);
+    padding: 14px 16px; display: flex; align-items: center; gap: 10px;
+    max-width: 230px; font-size: 0.82rem; font-weight: 700; color: var(--navy);
+  }
+  .hero-badge svg { width: 22px; height: 22px; color: #2fbf7a; flex-shrink: 0; }
+  @media (max-width: 800px) { .hero-badge { position: static; margin-top: 16px; max-width: none; } }
+
+  .section-alt { background: var(--paper); padding: 60px 0; }
+  .section-alt.no-top { padding-top: 0; padding-bottom: 70px; }
+  .section-beige { background: var(--beige); padding: 60px 0; }
+  section { padding: 60px 0; }
+
+  .section-head { max-width: 62ch; margin-bottom: 36px; }
+
+  .stat-strip {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(22,56,117,0.06); padding: 26px; position: relative;
+    z-index: 2; margin-top: -54px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;
+  }
+  @media (max-width: 900px) { .stat-strip { grid-template-columns: 1fr 1fr; margin-top: -40px; } }
+  @media (max-width: 520px) { .stat-strip { grid-template-columns: 1fr; } }
+  .stat-item { display: flex; gap: 12px; align-items: flex-start; }
+  .stat-item .icon-circle { width: 40px; height: 40px; margin-bottom: 0; flex-shrink: 0; }
+  .stat-item .icon-circle svg { width: 20px; height: 20px; }
+  .stat-item h4 { font-family: var(--font-display); color: var(--navy); font-size: 0.98rem; margin: 0 0 3px; }
+  .stat-item p { font-size: 0.85rem; margin: 0; }
+
+  .diagram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+  @media (max-width: 800px) { .diagram-grid { grid-template-columns: 1fr; } }
+  .diagram-illustration { background: var(--sky); border-radius: var(--radius); padding: 30px; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .card-body { padding: 22px; }
+  .icon-circle {
+    width: 52px; height: 52px; border-radius: 50%; background: var(--sky);
+    display: flex; align-items: center; justify-content: center; margin-bottom: 14px;
+  }
+  .icon-circle svg { width: 26px; height: 26px; color: var(--navy-2); }
+  .card-link { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 0.9rem; text-decoration: none; color: var(--navy-2); margin-top: 4px; }
+
+  .step-row { display: flex; align-items: flex-start; gap: 0; overflow-x: auto; padding-bottom: 8px; }
+  .step { flex: 1 1 0; min-width: 140px; text-align: center; padding: 0 10px; }
+  .step-icon { position: relative; display: inline-block; margin: 0 auto 10px; }
+  .step-num {
+    width: 24px; height: 24px; border-radius: 50%; background: var(--navy-2); color: #fff;
+    font-weight: 700; font-size: 0.72rem; display: flex; align-items: center; justify-content: center;
+    position: absolute; top: -6px; right: -6px; border: 2px solid #fff;
+  }
+  .step .icon-circle { margin: 0; width: 44px; height: 44px; }
+  .step .icon-circle svg { width: 22px; height: 22px; }
+  .step h4 { font-size: 0.92rem; color: var(--navy); margin: 0 0 6px; font-family: var(--font-body); font-weight: 700; }
+  .step p { font-size: 0.8rem; margin: 0; }
+  .step-arrow { display: flex; align-items: center; color: var(--line); flex: 0 0 auto; padding-top: 22px; }
+  .step-arrow svg { width: 20px; height: 20px; }
+  @media (max-width: 800px) {
+    .step-row { flex-direction: column; align-items: stretch; }
+    .step { text-align: left; display: flex; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: none; }
+    .step-icon { margin: 0; flex-shrink: 0; }
+    .step-arrow { display: none; }
+  }
+
+  .faq-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  @media (max-width: 860px) { .faq-grid { grid-template-columns: 1fr; } }
+  .accordion-item { border-bottom: 1px solid var(--line); }
+  .accordion-item:first-child { border-top: 1px solid var(--line); }
+  .accordion-trigger {
+    width: 100%; text-align: left; background: none; border: none; padding: 18px 4px;
+    font-family: var(--font-body); font-weight: 600; font-size: 1rem; color: var(--navy);
+    display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+  }
+  .accordion-trigger .chev { transition: transform 0.2s ease; flex-shrink: 0; margin-left: 12px; }
+  .accordion-item.open .accordion-trigger .chev { transform: rotate(180deg); }
+  .accordion-panel { max-height: 0; overflow: hidden; transition: max-height 0.25s ease; }
+  .accordion-item.open .accordion-panel { max-height: 400px; }
+  .accordion-panel p { padding: 0 4px 18px; }
+  .mt { margin-top: 20px; }
+
+  .callout { background: var(--sky); border-radius: var(--radius); padding: 24px; display: flex; gap: 14px; align-items: flex-start; }
+  .callout .icon-circle { flex-shrink: 0; margin-bottom: 0; background: #fff; }
+  .callout h3 { margin-bottom: 6px; }
+  .callout p { margin: 0; }
+
+  .bio-card { background: var(--sky); border-radius: var(--radius); padding: 26px; display: flex; gap: 22px; align-items: center; }
+  .bio-photo {
+    width: 84px; height: 84px; border-radius: 50%;
+    background: linear-gradient(135deg, #5fc1d6, #1e4c96);
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    color: #fff; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
+  }
+  .bio-card h3 { margin-bottom: 4px; }
+  .bio-card p { margin-bottom: 6px; }
+  @media (max-width: 600px) { .bio-card { flex-direction: column; text-align: center; } }
+
+  .cta-band { border-radius: var(--radius); padding: 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .cta-band h2 { margin-bottom: 6px; }
+  .cta-band p { margin: 0; }
+  @media (max-width: 700px) { .cta-band { flex-direction: column; align-items: flex-start; } }
+
+  .chip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+</style>

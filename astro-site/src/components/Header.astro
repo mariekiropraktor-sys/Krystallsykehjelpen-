@@ -1,0 +1,160 @@
+---
+export interface Props {
+  activePath?: string;
+}
+const { activePath = "" } = Astro.props;
+
+const links = [
+  { href: "/", label: "Hjem" },
+  { href: "/om-oss/", label: "Om krystallsykehjelpen" },
+  { href: "/krystallsyken/", label: "Krystallsyken" },
+  { href: "/ovelsesbibliotek/", label: "Øvelsesbibliotek" },
+  { href: "/kontakt/", label: "Kontakt oss" },
+];
+
+const bookingUrl =
+  "https://psno-patient-platform-fe.svc.pasientsky.no/embedded/planner/booking?serviceProviderId=54907264-049e-11eb-8fc8-26c6f94d64b7";
+---
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="/" class="logo">
+      <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#1B3B8C" stroke-width="7"/>
+        <circle cx="50" cy="50" r="30" fill="#5FC1D6"/>
+        <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
+          <line x1="50" y1="28" x2="50" y2="72"/>
+          <line x1="41" y1="34" x2="59" y2="34"/>
+          <line x1="39" y1="44" x2="61" y2="44"/>
+          <line x1="39" y1="56" x2="61" y2="56"/>
+          <line x1="41" y1="66" x2="59" y2="66"/>
+        </g>
+        <path d="M78 30 C88 38, 88 52, 76 58" fill="none" stroke="#1B3B8C" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">
+        <span class="logo-title">Krystallsykehjelpen</span>
+        <span class="logo-tagline">Spesialisert på svimmelhet</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Åpne meny" id="nav-toggle">☰</button>
+
+    <ul class="nav-links" id="nav-links">
+      {links.map((link) => (
+        <li>
+          <a href={link.href} class={activePath === link.href ? "active" : ""}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href={bookingUrl} class="btn btn-primary btn-nav">Bestill time</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const links = document.getElementById("nav-links");
+  toggle?.addEventListener("click", () => {
+    links?.classList.toggle("open");
+  });
+</script>
+
+<style>
+  .site-header {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 var(--line), 0 4px 16px rgba(22, 56, 117, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 24px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .logo-icon { width: 38px; height: 38px; flex-shrink: 0; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+  .logo-title { font-family: var(--font-display); font-size: 1.08rem; color: var(--navy); font-weight: 600; }
+  .logo-tagline { font-size: 0.72rem; color: var(--ink-soft); font-weight: 500; }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--navy);
+    background: var(--sky);
+  }
+
+  .nav-links li:has(.btn-nav) { margin-left: 6px; }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--navy);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .btn-nav { padding: 9px 18px; font-size: 0.86rem; }
+
+  @media (max-width: 860px) {
+    .nav-links {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 16px;
+      right: 16px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 32px rgba(22, 56, 117, 0.14);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 2px;
+      padding: 10px;
+      display: none;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 13px 16px; width: 100%; border-radius: 10px; }
+    .nav-links li:has(.btn-nav) { margin: 6px 4px 4px; }
+    .nav-toggle { display: block; }
+    .btn-nav { width: 100%; justify-content: center; }
+  }
+</style>
