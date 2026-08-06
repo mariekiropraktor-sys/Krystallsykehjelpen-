@@ -52,15 +52,7 @@ const steps = [
         </div>
       </div>
       <div class="hero-media">
-        <div class="photo-block">
-          <div>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 4a5 5 0 015 5c0 3-2 4-2 7a3 3 0 01-6 0" />
-              <path d="M9 15a4 4 0 01-4-4 4 4 0 014-4" />
-            </svg>
-            <br /><span>BYTT MED EKTE BILDE</span>
-          </div>
-        </div>
+        <img src="/hero-home.jpg" alt="Kvinne hjemme som kjenner på svimmelhet, med en anatomisk øremodell på bordet" class="hero-photo" />
         <div class="hero-badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10" /><path d="M9 12l2 2 4-4" />
@@ -269,6 +261,14 @@ const steps = [
   @media (max-width: 800px) { .hero-grid { grid-template-columns: 1fr; } }
 
   .hero-media { position: relative; }
+  .hero-photo {
+    width: 100%;
+    border-radius: var(--radius);
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    box-shadow: 0 20px 50px rgba(22,56,117,0.12);
+  }
+
   .photo-block {
     aspect-ratio: 4/3; border-radius: var(--radius);
     background: linear-gradient(135deg, #d7e6fa, #f4eee3);
