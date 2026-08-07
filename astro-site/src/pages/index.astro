@@ -101,17 +101,7 @@ const steps = [
           <a href="/krystallsyken/" class="card-link">Les mer om hvordan balanseorganet fungerer →</a>
         </div>
         <div class="diagram-illustration">
-          <svg viewBox="0 0 400 300" width="100%" role="img" aria-label="Illustrasjon av det indre øret og buegangene">
-            <circle cx="150" cy="150" r="95" fill="#fff" stroke="#d7e3f2" stroke-width="1" />
-            <g fill="none" stroke="#1b3b8c" stroke-width="6" stroke-linecap="round">
-              <path d="M120 90 a45 45 0 1 1 -30 70" />
-              <path d="M150 80 a55 30 25 1 1 -15 85" />
-              <path d="M100 130 a35 55 -20 1 1 60 60" />
-            </g>
-            <circle cx="118" cy="150" r="7" fill="#5fc1d6" />
-            <circle cx="90" cy="160" r="4" fill="#2fbf9c" />
-            <circle cx="95" cy="172" r="3.5" fill="#2fbf9c" />
-          </svg>
+          <img src="/ear-diagram.jpg" alt="Illustrasjon av buegangene i det indre øret" class="diagram-img" />
         </div>
       </div>
     </div>
@@ -222,7 +212,7 @@ const steps = [
   <section>
     <div class="container">
       <div class="bio-card">
-        <div class="bio-photo">MH</div>
+        <img src="/marie-portrait.jpg" alt="Marie, kiropraktor hos Krystallsykehjelpen" class="bio-photo" />
         <div>
           <h3>Marie – spesialisert på svimmelhet</h3>
           <p>Kiropraktor med spesialkompetanse på utredning og behandling av svimmelhet og krystallsyke.</p>
@@ -311,6 +301,7 @@ const steps = [
   .diagram-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
   @media (max-width: 800px) { .diagram-grid { grid-template-columns: 1fr; } }
   .diagram-illustration { background: var(--sky); border-radius: var(--radius); padding: 30px; }
+  .diagram-img { width: 100%; max-width: 380px; margin: 0 auto; display: block; }
 
   .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 22px; }
   .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
@@ -368,9 +359,8 @@ const steps = [
   .bio-card { background: var(--sky); border-radius: var(--radius); padding: 26px; display: flex; gap: 22px; align-items: center; }
   .bio-photo {
     width: 84px; height: 84px; border-radius: 50%;
-    background: linear-gradient(135deg, #5fc1d6, #1e4c96);
-    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-    color: #fff; font-family: var(--font-display); font-size: 1.4rem; font-weight: 600;
+    object-fit: cover;
+    flex-shrink: 0;
   }
   .bio-card h3 { margin-bottom: 4px; }
   .bio-card p { margin-bottom: 6px; }
